@@ -1,0 +1,37 @@
+{% extends 'Navbar.html' %}
+{% load static %}
+<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Print To Console</title>
+</head>
+<body>
+{% block body %}
+<div class="container">
+  <div class="row">
+    <div class="col order-last">
+      Second in DOM, ordered last
+        <div>
+    <form method="post" action="{% url 'print_to_console' %}">
+        {% csrf_token %}
+        <label>Enter Text:</label>
+        <input type="text" name="manasa" required>
+        <button type="submit" class="btn btn-success" style="background-color:#CD5C5C;">Submit</button>
+    </form>
+</div>
+    </div>
+    <div class="col">
+      First in DOM, unordered
+        <br><br>
+        <h1>
+        {{ input1 }}
+
+
+        </h1>
+    </div>
+  </div>
+</div>
+{% endblock %}
+</body>
+</html>
